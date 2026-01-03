@@ -3,7 +3,7 @@
 	"package": "q1d7n.chloearkwright.hotchpotch.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"KinderCreepers"
 	],
 	"injectors": {
 		"defaultRequire": 1
