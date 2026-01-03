@@ -1,0 +1,51 @@
+{
+	"schemaVersion": 1,
+	"id": "hotchpotch",
+	"version": "${version}",
+	"name": "Hotchpotch",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/hotchpotch/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "q1d7n.chloearkwright.hotchpotch.Hotchpotch",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "q1d7n.chloearkwright.hotchpotch.HotchpotchClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "q1d7n.chloearkwright.hotchpotch.HotchpotchDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"hotchpotch.mixins.json",
+		{
+			"config": "hotchpotch.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~26.1-",
+		"java": ">=25",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}

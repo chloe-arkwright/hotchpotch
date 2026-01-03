@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "q1d7n.chloearkwright.hotchpotch.mixin.client",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"ExampleClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
