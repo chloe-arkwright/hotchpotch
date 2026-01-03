@@ -1,0 +1,74 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+	id("net.fabricmc.fabric-loom") version "1.14.10"
+	id("org.jetbrains.kotlin.jvm") version "2.3.0"
+}
+
+val versionMod: String by project
+val mavenGroup: String by project
+val fileName: String by project
+
+
+version = versionMod
+group = mavenGroup
+
+base.archivesName = fileName
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods.create("hotchpotch") {
+		sourceSet("main", project.path)
+		sourceSet("client", project.path)
+	}
+}
+
+fabricApi {
+	configureDataGeneration {
+		client = true
+	}
+}
+
+dependencies {
+	val versionMinecraft: String by project
+	val versionLoader: String by project
+	val versionFabricApi: String by project
+	val versionFabricKotlin: String by project
+
+	minecraft("com.mojang:minecraft:${versionMinecraft}")
+	implementation("net.fabricmc:fabric-loader:${versionLoader}")
+
+	implementation("net.fabricmc.fabric-api:fabric-api:${versionFabricApi}")
+	implementation("net.fabricmc:fabric-language-kotlin:${versionFabricKotlin}")
+}
+
+tasks.withType<JavaCompile>().configureEach {
+	options.encoding = "UTF-8"
+	options.release = 25
+}
+
+kotlin {
+	compilerOptions {
+		jvmTarget = JvmTarget.JVM_25
+	}
+}
+
+java {
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+tasks.jar {
+	from("LICENSE")
+}
+
+tasks.processResources {
+	inputs.property("version", versionMod)
+
+	filesMatching("fabric.mod.json") {
+		expand(inputs.properties)
+	}
+}
