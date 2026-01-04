@@ -7,26 +7,23 @@ plugins {
 
 val versionMod: String by project
 val mavenGroup: String by project
-val fileName: String by project
+val projectId: String by project
 
 
 version = versionMod
 group = mavenGroup
 
-base.archivesName = fileName
+base.archivesName = projectId
 
 loom {
 	splitEnvironmentSourceSets()
-
-	mods.create("hotchpotch") {
-		sourceSet("main", project.path)
-		sourceSet("client", project.path)
-	}
 }
 
 fabricApi {
 	configureDataGeneration {
+		modId = projectId
 		client = true
+		createSourceSet = true
 	}
 }
 
