@@ -49,6 +49,17 @@ kotlin {
 	compilerOptions {
 		jvmTarget = JvmTarget.JVM_25
 	}
+
+	target.compilations.apply {
+		val main by getting
+
+		named("client") {
+			associateWith(main)
+		}
+		named("datagen") {
+			associateWith(main)
+		}
+	}
 }
 
 java {
