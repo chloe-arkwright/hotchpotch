@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hotchpotch:item/mini_charcoal"
+  }
+}

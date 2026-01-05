@@ -1,0 +1,9 @@
+// 26.1-snapshot-1	-999999999-01-01T00:00:00	Hotchpotch/Recipes
+45ed907c8c84d2026cd9c3225a2084abe62918de data/hotchpotch/advancement/recipes/misc/charcoal_from_mini_charcoal.json
+64ba82a122cc66c62d35815daee25775164bdefb data/hotchpotch/advancement/recipes/misc/coal_from_mini_coal.json
+d1110183438aa3e2b8db11d0606b6820944a42aa data/hotchpotch/advancement/recipes/misc/mini_charcoal.json
+c4a3a812288c472b36ec6f073dc6693e3914a87e data/hotchpotch/advancement/recipes/misc/mini_coal.json
+a821ceabcb7a956cf92cfc3b90631608319072fb data/hotchpotch/recipe/charcoal_from_mini_charcoal.json
+c753a15f6562bc3dcea35833f812a5c541a26bb9 data/hotchpotch/recipe/coal_from_mini_coal.json
+40ef2cb502f8ac6e43a7e0102b2422d57e3bba69 data/hotchpotch/recipe/mini_charcoal.json
+7640fa319160260a888b8cb26e20bbdcc6dfc4a2 data/hotchpotch/recipe/mini_coal.json

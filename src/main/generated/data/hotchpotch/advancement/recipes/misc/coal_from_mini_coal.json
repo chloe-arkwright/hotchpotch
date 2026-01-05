@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mini_coal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hotchpotch:mini_coal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hotchpotch:coal_from_mini_coal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mini_coal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hotchpotch:coal_from_mini_coal"
+    ]
+  }
+}
