@@ -17,19 +17,19 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "q1d7n.chloearkwright.hotchpotch.HotchPotch",
+				"value": "q1d7n.chloearkwright.hotchpotch.Hotchpotch",
 				"adapter": "kotlin"
 			}
 		],
 		"client": [
 			{
-				"value": "q1d7n.chloearkwright.hotchpotch.HotchPotchClient",
+				"value": "q1d7n.chloearkwright.hotchpotch.HotchpotchClient",
 				"adapter": "kotlin"
 			}
 		],
 		"fabric-datagen": [
 			{
-				"value": "q1d7n.chloearkwright.hotchpotch.HotchPotchDataGenerator",
+				"value": "q1d7n.chloearkwright.hotchpotch.datagen.HotchpotchDataGenerator",
 				"adapter": "kotlin"
 			}
 		]
