@@ -19,6 +19,12 @@ loom {
 	splitEnvironmentSourceSets()
 
 	accessWidenerPath = file("src/main/resources/${projectId}.classTweaker")
+
+	runs {
+		named("client") {
+			property("fabric-tag-conventions-v2.missingTagTranslationWarning", "VERBOSE")
+		}
+	}
 }
 
 fabricApi {
