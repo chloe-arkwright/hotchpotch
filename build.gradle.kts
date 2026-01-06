@@ -17,6 +17,8 @@ base.archivesName = projectId
 
 loom {
 	splitEnvironmentSourceSets()
+
+	accessWidenerPath = file("src/main/resources/${projectId}.classTweaker")
 }
 
 fabricApi {

@@ -107,5 +107,15 @@ class RecipeGenerator(registries: HolderLookup.Provider, output: RecipeOutput) :
             .save(output)
 
         netheriteSmithing(ModItems.DIAMOND_SCYTHE, RecipeCategory.TOOLS, ModItems.NETHERITE_SCYTHE)
+
+        shaped(RecipeCategory.TOOLS, ModItems.MUMBO_PAD)
+            .pattern("NNN")
+            .pattern("ICI")
+            .pattern("NNN")
+            .define('N', ConventionalItemTags.IRON_NUGGETS)
+            .define('I', ConventionalItemTags.IRON_INGOTS)
+            .define('C', Items.CRAFTER)
+            .unlockedBy(getHasName(Items.CRAFTER), has(Items.CRAFTER))
+            .save(output)
     }
 }

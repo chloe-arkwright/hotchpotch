@@ -23,5 +23,7 @@ class ModelGenerator(output: FabricPackOutput) : FabricModelProvider(output) {
         generator.generateFlatItem(ModItems.GOLDEN_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
         generator.generateFlatItem(ModItems.DIAMOND_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
         generator.generateFlatItem(ModItems.NETHERITE_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
+
+        generator.generateFlatItem(ModItems.MUMBO_PAD, ModelTemplates.FLAT_ITEM)
     }
 }

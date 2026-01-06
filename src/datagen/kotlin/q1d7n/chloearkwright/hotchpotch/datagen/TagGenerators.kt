@@ -41,5 +41,6 @@ class ItemTagGenerator(output: FabricPackOutput, registries: CompletableFuture<H
 
         tag(ItemTags.DURABILITY_ENCHANTABLE)
             .addTag(scythes)
+            .add(ModItems.MUMBO_PAD)
     }
 }
