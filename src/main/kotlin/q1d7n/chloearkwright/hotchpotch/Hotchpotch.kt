@@ -7,6 +7,7 @@ import net.minecraft.resources.Identifier
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.Items
 import org.apache.logging.log4j.LogManager
+import q1d7n.chloearkwright.hotchpotch.registration.ModGameRules
 import q1d7n.chloearkwright.hotchpotch.registration.ModItems
 
 internal object Hotchpotch : ModInitializer {
@@ -15,6 +16,9 @@ internal object Hotchpotch : ModInitializer {
 
 	override fun onInitialize() {
 		ModItems.init()
+		ModGameRules.init()
+
+		LeafDecayManager.init()
 
 		FuelValueEvents.BUILD.register { builder, context ->
             builder.add(ModItems.MINI_COAL, context.baseSmeltTime())
