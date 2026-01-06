@@ -35,8 +35,9 @@ fabricApi {
 	}
 }
 
+val versionMinecraft: String by project
+
 dependencies {
-	val versionMinecraft: String by project
 	val versionLoader: String by project
 	val versionFabricApi: String by project
 	val versionFabricKotlin: String by project
@@ -78,6 +79,7 @@ java {
 }
 
 tasks.jar {
+	version = "${versionMod}+${versionMinecraft}"
 	from("LICENSE")
 }
 
