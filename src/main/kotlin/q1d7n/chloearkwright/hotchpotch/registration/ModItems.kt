@@ -32,7 +32,7 @@ object ModItems {
         }
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register { entries ->
-            entries.insertAfter(Items.CHARCOAL, MINI_COAL, MINI_CHARCOAL)
+            entries.insertBefore(Items.COAL, MINI_COAL, MINI_CHARCOAL)
         }
 
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register { entries ->
