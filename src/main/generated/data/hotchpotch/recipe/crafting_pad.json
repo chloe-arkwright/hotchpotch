@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": "minecraft:crafter",
+    "I": "#c:ingots/iron",
+    "N": "#c:nuggets/iron"
+  },
+  "pattern": [
+    "NNN",
+    "ICI",
+    "NNN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hotchpotch:crafting_pad"
+  }
+}

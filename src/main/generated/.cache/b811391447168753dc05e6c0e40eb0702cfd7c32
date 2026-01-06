@@ -1,5 +1,6 @@
 // 26.1-snapshot-1	-999999999-01-01T00:00:00	Hotchpotch/Model Definitions
 490a0d4160a9bc1f6d84db04d8e721772d9e0542 assets/hotchpotch/items/copper_scythe.json
+7e773910efc5ce9b5c85db57c348628db6eabd46 assets/hotchpotch/items/crafting_pad.json
 b38a830ad54a0fecc64bd8ecc251fc509ceaebd4 assets/hotchpotch/items/diamond_scythe.json
 deeefd76faa9d31d3b293f90788f0bf8c3f05727 assets/hotchpotch/items/golden_scythe.json
 e1f7e7369fb7e44944bb43c55a225ebde3689084 assets/hotchpotch/items/iron_scythe.json
@@ -9,6 +10,7 @@ f654be852751c63f0566202614a4c3330528b1c2 assets/hotchpotch/items/mini_coal.json
 39f612a9d3f9967d9eb0ec3ffc86c427ea977231 assets/hotchpotch/items/stone_scythe.json
 116d0616b19d9be2c51686c5d56d004d62731bd2 assets/hotchpotch/items/wooden_scythe.json
 377833742f0a66030116f7679eb1261b148183d6 assets/hotchpotch/models/item/copper_scythe.json
+de4207405325c2d08b3e6eb87b21cc98c98e4e1a assets/hotchpotch/models/item/crafting_pad.json
 080cd8aad275662eca69e174b3669b8831147bdb assets/hotchpotch/models/item/diamond_scythe.json
 24e0eeeebc31566e358f1facb7976a03e549a4fb assets/hotchpotch/models/item/golden_scythe.json
 dcc2fd859628547eec6979a4ee85a260b823f512 assets/hotchpotch/models/item/iron_scythe.json
