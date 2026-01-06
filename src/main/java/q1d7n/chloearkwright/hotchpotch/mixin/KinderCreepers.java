@@ -17,6 +17,6 @@ public class KinderCreepers {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void hotchpotch$updateExplosionDelay(EntityType<? extends @NotNull Creeper> type, Level level, CallbackInfo ci) {
-        maxSwell = 45;
+//        maxSwell = 45;
     }
 }
