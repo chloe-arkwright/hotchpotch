@@ -1,4 +1,12 @@
 {
   "item.hotchpotch.mini_coal": "Mini Coal",
-  "item.hotchpotch.mini_charcoal": "Mini Charcoal"
+  "item.hotchpotch.mini_charcoal": "Mini Charcoal",
+
+  "item.hotchpotch.wooden_scythe": "Wooden Scythe",
+  "item.hotchpotch.stone_scythe": "Stone Scythe",
+  "item.hotchpotch.copper_scythe": "Copper Scythe",
+  "item.hotchpotch.iron_scythe": "Iron Scythe",
+  "item.hotchpotch.golden_scythe": "Golden Scythe",
+  "item.hotchpotch.diamond_scythe": "Diamond Scythe",
+  "item.hotchpotch.netherite_scythe": "Netherite Scythe"
 }

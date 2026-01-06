@@ -15,5 +15,13 @@ class ModelGenerator(output: FabricPackOutput) : FabricModelProvider(output) {
     override fun generateItemModels(generator: ItemModelGenerators) {
         generator.generateFlatItem(ModItems.MINI_COAL, ModelTemplates.FLAT_ITEM)
         generator.generateFlatItem(ModItems.MINI_CHARCOAL, ModelTemplates.FLAT_ITEM)
+
+        generator.generateFlatItem(ModItems.WOODEN_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
+        generator.generateFlatItem(ModItems.STONE_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
+        generator.generateFlatItem(ModItems.COPPER_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
+        generator.generateFlatItem(ModItems.IRON_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
+        generator.generateFlatItem(ModItems.GOLDEN_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
+        generator.generateFlatItem(ModItems.DIAMOND_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
+        generator.generateFlatItem(ModItems.NETHERITE_SCYTHE, ModelTemplates.FLAT_HANDHELD_ITEM)
     }
 }
