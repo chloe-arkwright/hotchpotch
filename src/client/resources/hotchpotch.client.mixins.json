@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "q1d7n.chloearkwright.hotchpotch.mixin.client",
+	"package": "app.arkwright.hotchpotch.mixin.client",
 	"compatibilityLevel": "JAVA_25",
 	"client": [],
 	"injectors": {
