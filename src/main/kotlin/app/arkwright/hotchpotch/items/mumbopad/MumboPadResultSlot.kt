@@ -17,7 +17,7 @@ class MumboPadResultSlot(val player: Player, val craftSlots: CraftingContainer, 
 
             val holder = container as RecipeCraftingHolder
             val recipe = holder.recipeUsed?.value as? CraftingRecipe
-            val result = recipe?.assemble(craftSlots.asCraftInput(), player.level().registryAccess())
+            val result = recipe?.assemble(craftSlots.asCraftInput())
             player.getItemInHand(hand).hurtAndBreak(removeCount / (result?.count ?: 1), player, hand)
         }
 

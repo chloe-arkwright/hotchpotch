@@ -20,6 +20,13 @@ loom {
 
 	accessWidenerPath = file("src/main/resources/${projectId}.classTweaker")
 
+	mods {
+		create("hotchpotch") {
+			sourceSet("main")
+			sourceSet("client")
+		}
+	}
+
 	runs {
 		named("client") {
 			property("fabric-tag-conventions-v2.missingTagTranslationWarning", "VERBOSE")
@@ -29,7 +36,7 @@ loom {
 
 fabricApi {
 	configureDataGeneration {
-		modId = projectId
+		modId = "$projectId-data"
 		client = true
 		createSourceSet = true
 	}

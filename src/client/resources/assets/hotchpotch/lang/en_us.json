@@ -11,5 +11,7 @@
   "item.hotchpotch.netherite_scythe": "Netherite Scythe",
   "tag.item.hotchpotch.scythes": "Scythes",
 
-  "item.hotchpotch.crafting_pad": "Crafting Pad"
+  "item.hotchpotch.crafting_pad": "Crafting Pad",
+
+	"block.hotchpotch.fractured_stone": "Fractured Stone"
 }

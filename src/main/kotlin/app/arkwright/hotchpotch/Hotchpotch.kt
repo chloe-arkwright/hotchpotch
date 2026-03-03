@@ -1,16 +1,22 @@
 package app.arkwright.hotchpotch
 
-import net.fabricmc.api.ModInitializer
-import net.minecraft.resources.Identifier
 import org.apache.logging.log4j.LogManager
+
+import net.minecraft.resources.Identifier
+import net.minecraft.world.level.block.Blocks
+
+import net.fabricmc.api.ModInitializer
+
+import app.arkwright.hotchpotch.registration.ModBlocks
 import app.arkwright.hotchpotch.registration.ModGameRules
 import app.arkwright.hotchpotch.registration.ModItems
 
 internal object Hotchpotch : ModInitializer {
 	internal const val MOD_ID: String = "hotchpotch"
-    internal val LOGGER = LogManager.getLogger(MOD_ID)
+	internal val LOGGER = LogManager.getLogger(MOD_ID)
 
 	override fun onInitialize() {
+		ModBlocks.init()
 		ModItems.init()
 		ModGameRules.init()
 

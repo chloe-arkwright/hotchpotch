@@ -26,12 +26,6 @@
 				"value": "app.arkwright.hotchpotch.HotchpotchClient",
 				"adapter": "kotlin"
 			}
-		],
-		"fabric-datagen": [
-			{
-				"value": "app.arkwright.hotchpotch.datagen.HotchpotchDataGenerator",
-				"adapter": "kotlin"
-			}
 		]
 	},
 	"mixins": [

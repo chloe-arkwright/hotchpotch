@@ -22,7 +22,7 @@ class MumboPadItem(properties: Properties) : Item(properties) {
                         hand
                     )
                 },
-                name
+                this.getName(player.getItemInHand(hand))
             ))
         }
 

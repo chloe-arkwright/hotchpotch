@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "hotchpotch-data",
+  "name": "Hotchpotch",
+  "version": "1.0.0",
+  "entrypoints": {
+		"fabric-datagen": [
+			{
+				"value": "app.arkwright.hotchpotch.datagen.HotchpotchDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+  }
+}

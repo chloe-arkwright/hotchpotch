@@ -1,0 +1,46 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = tab
+indent_size = 4
+max_line_length = 140
+
+[*.java]
+ij_java_blank_lines_after_imports = 1
+ij_java_blank_lines_before_imports = 1
+ij_java_use_single_class_imports = true
+ij_java_layout_static_imports_separately = true
+ij_java_imports_layout = *,$*,|,com.llamalad7.mixinextras.**,org.spongepowered.**,|,com.mojang.**,net.minecraft.**,|,net.fabricmc.**,|,app.arkwright.**
+ij_java_names_count_to_use_import_on_demand = 1000
+
+[*.{kt,kts}]
+ktlint_code_style = intellij_idea
+ktlint_standard_annotation = enabled
+ktlint_standard_trailing-comma-on-call-site = disabled
+ktlint_standard_trailing-comma-on-declaration-site = disabled
+ktlint_standard_function-expression-body = disabled
+ktlint_standard_class-signature = disabled
+ktlint_standard_function-signature = disabled
+ktlint_standard_parameter-list-wrapping = disabled
+ij_kotlin_imports_layout = *,$*,|,com.mojang.**,^com.mojang.**,net.minecraft.**,^net.minecraft.**,|,net.fabricmc.**,^net.fabricmc.**,|,app.arkwright.**,^app.arkwright.**
+ij_kotlin_name_count_to_use_star_import = 1000
+ij_kotlin_name_count_to_use_star_import_for_members = 1000
+
+[*.bat]
+end_of_line = crlf
+
+[*.{json,mcmeta}]
+indent_size = 2
+
+[**/lang/*.{json,jsonc}]
+ij_json_property_alignment = align_on_value
+ij_json_keep_blank_lines_in_code = 1
+ij_json_keep_line_breaks = true
+
+[*.properties]
+ij_properties_keep_blank_lines = true
+ij_properties_spaces_around_key_value_delimiter = true
