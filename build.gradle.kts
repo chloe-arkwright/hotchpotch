@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-	id("net.fabricmc.fabric-loom") version "1.14.10"
-	id("org.jetbrains.kotlin.jvm") version "2.3.0"
+	id("net.fabricmc.fabric-loom") version "1.15.4"
+	id("org.jetbrains.kotlin.jvm") version "2.3.10"
 }
 
 val versionMod: String by project

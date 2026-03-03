@@ -3,7 +3,6 @@ package app.arkwright.hotchpotch
 import org.apache.logging.log4j.LogManager
 
 import net.minecraft.resources.Identifier
-import net.minecraft.world.level.block.Blocks
 
 import net.fabricmc.api.ModInitializer
 
