@@ -5,6 +5,12 @@ plugins {
 	id("org.jetbrains.kotlin.jvm") version "2.3.10"
 }
 
+tasks.wrapper {
+	gradleVersion = "9.4.0"
+	distributionSha256Sum = "b21468753cb43c167738ee04f10c706c46459cf8f8ae6ea132dc9ce589a261f2"
+	distributionType = Wrapper.DistributionType.ALL
+}
+
 val versionMod: String by project
 val mavenGroup: String by project
 val projectId: String by project
