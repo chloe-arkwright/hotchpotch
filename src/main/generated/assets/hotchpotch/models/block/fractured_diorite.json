@@ -1,0 +1,6 @@
+{
+  "parent": "hotchpotch:block/template_fractured_block",
+  "textures": {
+    "all": "minecraft:block/diorite"
+  }
+}
