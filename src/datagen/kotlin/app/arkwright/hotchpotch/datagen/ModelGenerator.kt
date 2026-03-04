@@ -9,12 +9,12 @@ import net.minecraft.client.data.models.model.ModelTemplate
 import net.minecraft.client.data.models.model.ModelTemplates
 import net.minecraft.client.data.models.model.TextureMapping
 import net.minecraft.client.data.models.model.TextureSlot
-import net.minecraft.world.level.block.Blocks
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput
 
 import app.arkwright.hotchpotch.Hotchpotch
+import app.arkwright.hotchpotch.block.FracturedBlock
 import app.arkwright.hotchpotch.registration.ModBlocks
 import app.arkwright.hotchpotch.registration.ModItems
 
@@ -26,17 +26,27 @@ class ModelGenerator(output: FabricPackOutput) : FabricModelProvider(output) {
 	)
 
 	override fun generateBlockStateModels(generator: BlockModelGenerators) {
-		val fracturedStone = fracturedBlockTemplate.create(
-			ModBlocks.FRACTURED_STONE,
-			TextureMapping.cube(Blocks.STONE),
+		fracturedBlock(ModBlocks.FRACTURED_DIRT, generator)
+		fracturedBlock(ModBlocks.FRACTURED_CLAY, generator)
+		fracturedBlock(ModBlocks.FRACTURED_STONE, generator)
+		fracturedBlock(ModBlocks.FRACTURED_ANDESITE, generator)
+		fracturedBlock(ModBlocks.FRACTURED_DIORITE, generator)
+		fracturedBlock(ModBlocks.FRACTURED_GRANITE, generator)
+		fracturedBlock(ModBlocks.FRACTURED_NETHERRACK, generator)
+	}
+
+	private fun fracturedBlock(block: FracturedBlock, generator: BlockModelGenerators) {
+		val model = fracturedBlockTemplate.create(
+			block,
+			TextureMapping.cube(block.base),
 			generator.modelOutput
 		)
 
 		generator.blockStateOutput.accept(
-			BlockModelGenerators.createSimpleBlock(ModBlocks.FRACTURED_STONE, plainVariant(fracturedStone))
+			BlockModelGenerators.createSimpleBlock(block, plainVariant(model))
 		)
 
-		generator.registerSimpleItemModel(ModBlocks.FRACTURED_STONE, fracturedStone)
+		generator.registerSimpleItemModel(block, model)
 	}
 
 	override fun generateItemModels(generator: ItemModelGenerators) {

@@ -13,5 +13,13 @@
 
   "item.hotchpotch.crafting_pad": "Crafting Pad",
 
-	"block.hotchpotch.fractured_stone": "Fractured Stone"
+	"block.hotchpotch.fractured_dirt": "Fractured Dirt",
+	"block.hotchpotch.fractured_clay": "Fractured Clay",
+	"block.hotchpotch.fractured_stone": "Fractured Stone",
+	"block.hotchpotch.fractured_andesite": "Fractured Andesite",
+	"block.hotchpotch.fractured_diorite": "Fractured Diorite",
+	"block.hotchpotch.fractured_granite": "Fractured Granite",
+	"block.hotchpotch.fractured_netherrack": "Fractured Netherrack",
+
+	"block.hotchpotch.fractured_block.lore": "Falls like gravel, acts like %s"
 }
