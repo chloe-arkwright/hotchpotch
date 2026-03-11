@@ -1,12 +1,10 @@
 {
 	"schemaVersion": 1,
 	"id": "hotchpotch",
-	"version": "${version}",
+	"version": "${project.version}",
 	"name": "Hotchpotch",
 	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
+	"authors": [ "Chloe Arkwright" ],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"

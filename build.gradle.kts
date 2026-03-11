@@ -1,105 +1,15 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
-	id("net.fabricmc.fabric-loom") version "1.15.4"
-	id("org.jetbrains.kotlin.jvm") version "2.3.10"
-}
-
-tasks.wrapper {
-	gradleVersion = "9.4.0"
-	distributionSha256Sum = "b21468753cb43c167738ee04f10c706c46459cf8f8ae6ea132dc9ce589a261f2"
-	distributionType = Wrapper.DistributionType.ALL
-}
-
-val versionMod: String by project
-val mavenGroup: String by project
-val projectId: String by project
-
-
-version = versionMod
-group = mavenGroup
-
-base.archivesName = projectId
-
-loom {
-	splitEnvironmentSourceSets()
-
-	accessWidenerPath = file("src/main/resources/${projectId}.classTweaker")
-
-	mods {
-		create("hotchpotch") {
-			sourceSet("main")
-			sourceSet("client")
-		}
-	}
-
-	runs {
-		named("client") {
-			property("fabric-tag-conventions-v2.missingTagTranslationWarning", "VERBOSE")
-		}
-	}
-}
-
-fabricApi {
-	configureDataGeneration {
-		modId = "$projectId-data"
-		client = true
-		createSourceSet = true
-	}
-}
-
-val versionMinecraft: String by project
-
-dependencies {
-	val versionLoader: String by project
-	val versionFabricApi: String by project
-	val versionFabricKotlin: String by project
-
-	minecraft("com.mojang:minecraft:${versionMinecraft}")
-	implementation("net.fabricmc:fabric-loader:${versionLoader}")
-
-	implementation("net.fabricmc.fabric-api:fabric-api:${versionFabricApi}")
-	implementation("net.fabricmc:fabric-language-kotlin:${versionFabricKotlin}")
-}
-
-tasks.withType<JavaCompile>().configureEach {
-	options.encoding = "UTF-8"
-	options.release = 25
+	id("arkwright-root")
+	id("arkwright-kotlin")
+	id("arkwright-minecraft-split")
+	id("arkwright-minecraft-datagens")
 }
 
 kotlin {
-	compilerOptions {
-		jvmTarget = JvmTarget.JVM_25
-	}
-
 	target.compilations.apply {
 		val main by getting
 
-		named("client") {
-			associateWith(main)
-		}
-		named("datagen") {
-			associateWith(main)
-		}
-	}
-}
-
-java {
-	withSourcesJar()
-
-	sourceCompatibility = JavaVersion.VERSION_25
-	targetCompatibility = JavaVersion.VERSION_25
-}
-
-tasks.jar {
-	version = "${versionMod}+${versionMinecraft}"
-	from("LICENSE")
-}
-
-tasks.processResources {
-	inputs.property("version", versionMod)
-
-	filesMatching("fabric.mod.json") {
-		expand(inputs.properties)
+		named("client") { associateWith(main) }
+		named("datagen") { associateWith(main) }
 	}
 }
