@@ -26,7 +26,7 @@ group = projectGroup
 base.archivesName = projectId
 
 loom {
-	accessWidenerPath = file("src/main/resources/$projectId.classTweaker").takeIf { it.exists() }
+	accessWidenerPath = file("src/main/resources/$projectId.classTweaker").takeIf(File::exists)
 
 	if (usesSplitSources) {
 		splitEnvironmentSourceSets()
@@ -64,6 +64,7 @@ repositories {
 				url = uri("https://api.modrinth.com/maven")
 			}
 		}
+
 		filter {
 			includeGroup("maven.modrinth")
 		}
@@ -81,14 +82,8 @@ dependencies {
 
 	implementation("net.fabricmc:fabric-loader:$versionFabricLoader")
 
-	versionFabricApi?.let { ver ->
-		implementation("net.fabricmc.fabric-api:fabric-api:$ver")
-	}
-
-	versionFabricKotlin?.let { ver ->
-		implementation("net.fabricmc:fabric-language-kotlin:$ver")
-	}
-
+	versionFabricApi?.let { implementation("net.fabricmc.fabric-api:fabric-api:$it") }
+	versionFabricKotlin?.let { implementation("net.fabricmc:fabric-language-kotlin:$it") }
 }
 
 tasks {
