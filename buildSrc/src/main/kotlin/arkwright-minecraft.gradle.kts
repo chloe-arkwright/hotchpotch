@@ -1,6 +1,17 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
+
 plugins {
 	id("arkwright-java")
 	id("net.fabricmc.fabric-loom")
+}
+
+// Build Configuration Flags
+val usesKotlin = findProperty("app.arkwright.kotlin") == "true"
+val usesSplitSources = findProperty("app.arkwright.split-sources") == "true"
+val addDatagens = findProperty("app.arkwright.datagens") == "true"
+
+if (usesKotlin) {
+	apply(plugin = "arkwright-kotlin")
 }
 
 val props = project.extensions.create("props", NonNullPropertyDelegate::class, project.extra)
@@ -17,9 +28,30 @@ base.archivesName = projectId
 loom {
 	accessWidenerPath = file("src/main/resources/$projectId.classTweaker").takeIf { it.exists() }
 
+	if (usesSplitSources) {
+		splitEnvironmentSourceSets()
+
+		mods {
+			create(projectId) {
+				sourceSet("main")
+				sourceSet("client")
+			}
+		}
+	}
+
 	runs {
 		named("client") {
 			property("fabric-tag-conventions-v2.missingTagTranslationWarning", "VERBOSE")
+		}
+	}
+}
+
+if (addDatagens) {
+	fabricApi {
+		configureDataGeneration {
+			client = true
+			modId = "$projectId-data"
+			createSourceSet = true
 		}
 	}
 }
@@ -73,6 +105,22 @@ tasks {
 
 		filesMatching("fabric.mod.json") {
 			expand(inputs.properties)
+		}
+	}
+}
+
+if (usesKotlin && (usesSplitSources || addDatagens)) {
+	extensions.configure<KotlinJvmProjectExtension>("kotlin") {
+		target.compilations.apply {
+			val main by getting
+
+			if (usesSplitSources) {
+				named("client") { associateWith(main) }
+			}
+
+			if (addDatagens) {
+				named("datagen") { associateWith(main) }
+			}
 		}
 	}
 }
