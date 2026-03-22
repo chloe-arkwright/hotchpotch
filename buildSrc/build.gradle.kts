@@ -37,7 +37,7 @@ kotlin {
 
 dependencies {
 	// https://maven.fabricmc.net/net/fabricmc/fabric-loom/
-	implementation("net.fabricmc:fabric-loom:1.15.4")
+	implementation("net.fabricmc:fabric-loom:1.16.0-alpha.12")
 	// https://plugins.gradle.org/plugin/me.modmuss50.mod-publish-plugin
 	implementation("me.modmuss50.mod-publish-plugin:me.modmuss50.mod-publish-plugin.gradle.plugin:1.1.0")
 	// https://mvnrepository.com/artifact/com.google.code.gson/gson
