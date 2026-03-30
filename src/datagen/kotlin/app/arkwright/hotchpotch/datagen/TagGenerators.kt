@@ -7,17 +7,9 @@ import net.minecraft.data.tags.IntrinsicHolderTagsProvider
 import net.minecraft.tags.ItemTags
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
-import net.minecraft.world.level.block.Block
 import app.arkwright.hotchpotch.Hotchpotch
 import app.arkwright.hotchpotch.registration.ModItems
 import java.util.concurrent.CompletableFuture
-
-class BlockTagGenerator(output: FabricPackOutput, registries: CompletableFuture<HolderLookup.Provider>
-) : IntrinsicHolderTagsProvider<Block>(output, Registries.BLOCK, registries, { it.builtInRegistryHolder().key() }) {
-    override fun addTags(registries: HolderLookup.Provider) {
-
-    }
-}
 
 class ItemTagGenerator(output: FabricPackOutput, registries: CompletableFuture<HolderLookup.Provider>
 ) : IntrinsicHolderTagsProvider<Item>(output, Registries.ITEM, registries, { it.builtInRegistryHolder().key() }) {
