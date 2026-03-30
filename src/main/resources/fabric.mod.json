@@ -3,11 +3,12 @@
 	"id": "hotchpotch",
 	"version": "${project.version}",
 	"name": "Hotchpotch",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Just a hotchpotch of features I'd like when playing Minecraft.",
 	"authors": [ "Chloe Arkwright" ],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/hotchpotch",
+		"sources": "https://github.com/chloe-arkwright/hotchpotch",
+		"issues": "https://github.com/chloe-arkwright/hotchpotch/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/hotchpotch/icon.png",
@@ -18,27 +19,17 @@
 				"value": "app.arkwright.hotchpotch.Hotchpotch",
 				"adapter": "kotlin"
 			}
-		],
-		"client": [
-			{
-				"value": "app.arkwright.hotchpotch.HotchpotchClient",
-				"adapter": "kotlin"
-			}
 		]
 	},
 	"mixins": [
-		"hotchpotch.mixins.json",
-		{
-			"config": "hotchpotch.client.mixins.json",
-			"environment": "client"
-		}
+		"hotchpotch.mixins.json"
 	],
 	"accessWidener": "hotchpotch.classTweaker",
 	"depends": {
 		"fabricloader": ">=0.18.4",
-		"minecraft": "~26.1-rc.2",
+		"minecraft": "~26.1",
 		"java": ">=25",
-		"fabric-api": ">=0.144.0+26.1",
-		"fabric-language-kotlin": ">=1.13.9+kotlin.2.3.10"
+		"fabric-api": ">=0.144.3+26.1",
+		"fabric-language-kotlin": ">=1.13.10+kotlin.2.3.20"
 	}
 }

@@ -10,7 +10,6 @@ object HotchpotchDataGenerator : DataGeneratorEntrypoint {
 		with(generator.createPack()) {
 			addProvider(::ModelGenerator)
 			addProvider(::RecipeGeneratorRunner)
-			addProvider(::BlockTagGenerator)
 			addProvider(::ItemTagGenerator)
 		}
 	}
