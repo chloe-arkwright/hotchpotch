@@ -22,7 +22,7 @@ publishMods {
 	}
 	modLoaders = listOf("fabric")
 	changelog = file("changelog.md").readText(Charsets.UTF_8)
-	dryRun = providers.gradleProperty("app.arkwright.chloe.release.dryrun").map { it == "true" }
+	dryRun = providers.gradleProperty("app.arkwright.chloe.release.dryrun").map { it == "true" }.orElse(true)
 
 	modrinth {
 		accessToken = providers.gradleProperty("app.arkwright.chloe.release.modrinth")
