@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-	kotlin("jvm") version "2.3.10"
+	kotlin("jvm") version "2.3.20"
 	`kotlin-dsl`
 }
 
@@ -37,11 +37,11 @@ kotlin {
 
 dependencies {
 	// https://maven.fabricmc.net/net/fabricmc/fabric-loom/
-	implementation("net.fabricmc:fabric-loom:1.16.0-alpha.12")
+	implementation("net.fabricmc:fabric-loom:1.16.0-alpha.16")
 	// https://plugins.gradle.org/plugin/me.modmuss50.mod-publish-plugin
 	implementation("me.modmuss50.mod-publish-plugin:me.modmuss50.mod-publish-plugin.gradle.plugin:1.1.0")
 	// https://mvnrepository.com/artifact/com.google.code.gson/gson
 	implementation("com.google.code.gson:gson:2.13.2")
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-gradle-plugin
-	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.10")
+	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.20")
 }

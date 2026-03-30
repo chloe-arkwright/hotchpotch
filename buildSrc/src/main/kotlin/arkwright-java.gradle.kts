@@ -18,11 +18,13 @@ tasks {
 	jar {
 		inputs.property("archivesName", project.base.archivesName)
 
-		listOf(
-			rootProject.file("LICENSE"),
-			rootProject.file("LICENSE-ASSETS")
-		).filter { it.exists() }
-		.forEach(::from)
+		listOf(file("LICENSE"), rootProject.file("LICENSE"))
+			.firstOrNull(File::exists)
+			?.also { from(it) }
+
+		listOf(file("LICENSE-ASSETS"), rootProject.file("LICENSE-ASSETS"))
+			.firstOrNull(File::exists)
+			?.also { from(it) }
 	}
 
 	tasks.withType<ProcessResources> {
