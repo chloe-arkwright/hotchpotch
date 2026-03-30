@@ -6,6 +6,12 @@ import net.minecraft.world.level.gamerules.GameRuleCategory
 import app.arkwright.hotchpotch.Hotchpotch
 
 object ModGameRules {
+//    @JvmField
+//    val CREEPER_EXPLOSION_DELAY: GameRule<Int> = GameRuleBuilder.forInteger(30)
+//    .minValue(0)
+//    .category(GameRuleCategory.MOBS)
+//    .buildAndRegister(Hotchpotch.id("creeper_explosion_delay"))
+
     @JvmField
 	val FAST_LEAF_DECAY: GameRule<Boolean> = GameRuleBuilder.forBoolean(false)
 		.category(GameRuleCategory.UPDATES)
