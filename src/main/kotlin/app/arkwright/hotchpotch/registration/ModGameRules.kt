@@ -11,7 +11,7 @@ object ModGameRules {
 		.category(GameRuleCategory.UPDATES)
 		.buildAndRegister(Hotchpotch.id("fast_leaf_decay"))
 
-    fun init() {
+    internal fun init() {
         // Just for class loading so the register methods get called.
     }
 }

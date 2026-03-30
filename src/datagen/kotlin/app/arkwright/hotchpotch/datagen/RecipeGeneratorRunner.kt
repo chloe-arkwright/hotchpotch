@@ -12,6 +12,9 @@ import net.minecraft.world.item.Items
 import app.arkwright.hotchpotch.Hotchpotch
 import app.arkwright.hotchpotch.registration.ModItems
 import java.util.concurrent.CompletableFuture
+import net.minecraft.world.item.crafting.Ingredient
+import net.minecraft.world.level.block.Blocks
+import app.arkwright.hotchpotch.registration.ModBlocks
 
 class RecipeGeneratorRunner(
     output: FabricPackOutput,
@@ -117,5 +120,16 @@ class RecipeGenerator(registries: HolderLookup.Provider, output: RecipeOutput) :
             .define('C', Items.CRAFTER)
             .unlockedBy(getHasName(Items.CRAFTER), has(Items.CRAFTER))
             .save(output)
-    }
+
+		slab(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DEEP_SLATE_SLAB, Blocks.DEEPSLATE)
+		stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DEEP_SLATE_SLAB, Blocks.DEEPSLATE, 2)
+
+		stairBuilder(ModBlocks.DEEP_SLATE_STAIRS, Ingredient.of(Blocks.DEEPSLATE))
+		.unlockedBy(getHasName(Blocks.DEEPSLATE), has(Blocks.DEEPSLATE))
+		.save(output);
+		stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DEEP_SLATE_STAIRS, Blocks.DEEPSLATE, 1)
+
+		wall(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DEEP_SLATE_WALL, Blocks.DEEPSLATE)
+		stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DEEP_SLATE_WALL, Blocks.DEEPSLATE, 1)
+	}
 }

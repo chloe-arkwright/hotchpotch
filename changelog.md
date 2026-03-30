@@ -1,0 +1,2 @@
+- Added Deepslate stairs, slabs, and walls.
+- Removed some WIP content until it has been finished.

@@ -13,6 +13,10 @@
 
   "item.hotchpotch.crafting_pad": "Crafting Pad",
 
+	"block.hotchpotch.deep_slate_stairs": "Deepslate Stairs",
+	"block.hotchpotch.deep_slate_slab": "Deepslate Slab",
+	"block.hotchpotch.deep_slate_wall": "Deepslate Wall",
+
 	"block.hotchpotch.fractured_dirt": "Fractured Dirt",
 	"block.hotchpotch.fractured_clay": "Fractured Clay",
 	"block.hotchpotch.fractured_stone": "Fractured Stone",

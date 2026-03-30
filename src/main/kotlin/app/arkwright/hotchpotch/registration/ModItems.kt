@@ -5,6 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.Identifier
 import net.minecraft.resources.ResourceKey
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
@@ -33,7 +34,11 @@ object ModItems {
 
 	val MUMBO_PAD = register("crafting_pad", Item.Properties().stacksTo(1).durability(250), ::MumboPadItem)
 
-	fun init() {
+	val DEEP_SLATE_STAIRS = register("deep_slate_stairs") { BlockItem(ModBlocks.DEEP_SLATE_STAIRS, it.useBlockDescriptionPrefix()) }
+	val DEEP_SLATE_SLAB = register("deep_slate_slab") { BlockItem(ModBlocks.DEEP_SLATE_SLAB, it.useBlockDescriptionPrefix()) }
+	val DEEP_SLATE_WALL = register("deep_slate_wall") { BlockItem(ModBlocks.DEEP_SLATE_WALL, it.useBlockDescriptionPrefix()) }
+
+	internal fun init() {
 		FuelValueEvents.BUILD.register { builder, context ->
 			builder.add(MINI_COAL, context.baseSmeltTime())
 			builder.add(MINI_CHARCOAL, context.baseSmeltTime())
@@ -52,6 +57,10 @@ object ModItems {
 			entries.insertAfter(Items.DIAMOND_HOE, DIAMOND_SCYTHE)
 			entries.insertAfter(Items.NETHERITE_HOE, NETHERITE_SCYTHE)
 			entries.accept(MUMBO_PAD)
+		}
+
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register { entries ->
+			entries.insertAfter(Items.DEEPSLATE, DEEP_SLATE_STAIRS, DEEP_SLATE_SLAB, DEEP_SLATE_WALL)
 		}
 	}
 

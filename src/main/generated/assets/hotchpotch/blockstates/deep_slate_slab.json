@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hotchpotch:block/deep_slate_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/deepslate"
+    },
+    "type=top": {
+      "model": "hotchpotch:block/deep_slate_slab_top"
+    }
+  }
+}
