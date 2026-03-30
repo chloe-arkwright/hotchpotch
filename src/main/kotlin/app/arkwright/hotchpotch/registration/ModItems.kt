@@ -1,19 +1,26 @@
 package app.arkwright.hotchpotch.registration
 
 import net.minecraft.core.Registry
+import net.minecraft.core.component.DataComponentType
+import net.minecraft.core.component.DataComponents
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
+import net.minecraft.network.chat.Component
 import net.minecraft.resources.Identifier
 import net.minecraft.resources.ResourceKey
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.ToolMaterial
+import net.minecraft.world.item.component.ItemLore
+import net.minecraft.world.level.block.Block
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents
 import net.fabricmc.fabric.api.registry.FuelValueEvents
 
 import app.arkwright.hotchpotch.Hotchpotch
+import app.arkwright.hotchpotch.block.FracturedBlock
 import app.arkwright.hotchpotch.items.MumboPadItem
 import app.arkwright.hotchpotch.items.ScytheItem
 
@@ -32,6 +39,14 @@ object ModItems {
 	}
 
 	val MUMBO_PAD = register("crafting_pad", Item.Properties().stacksTo(1).durability(250), ::MumboPadItem)
+
+	val FRACTURED_DIRT = blockItem(ModBlocks.FRACTURED_DIRT)
+	val FRACTURED_CLAY = blockItem(ModBlocks.FRACTURED_CLAY)
+	val FRACTURED_STONE = blockItem(ModBlocks.FRACTURED_STONE)
+	val FRACTURED_ANDESITE = blockItem(ModBlocks.FRACTURED_ANDESITE)
+	val FRACTURED_DIORITE = blockItem(ModBlocks.FRACTURED_DIORITE)
+	val FRACTURED_GRANITE = blockItem(ModBlocks.FRACTURED_GRANITE)
+	val FRACTURED_NETHERRACK = blockItem(ModBlocks.FRACTURED_NETHERRACK)
 
 	fun init() {
 		FuelValueEvents.BUILD.register { builder, context ->
@@ -53,6 +68,24 @@ object ModItems {
 			entries.insertAfter(Items.NETHERITE_HOE, NETHERITE_SCYTHE)
 			entries.accept(MUMBO_PAD)
 		}
+
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register { entries ->
+			entries.accept(ModBlocks.FRACTURED_DIRT)
+			entries.accept(ModBlocks.FRACTURED_CLAY)
+			entries.accept(ModBlocks.FRACTURED_STONE)
+			entries.accept(ModBlocks.FRACTURED_ANDESITE)
+			entries.accept(ModBlocks.FRACTURED_DIORITE)
+			entries.accept(ModBlocks.FRACTURED_GRANITE)
+			entries.accept(ModBlocks.FRACTURED_NETHERRACK)
+		}
+	}
+
+	private fun blockItem(block: FracturedBlock): BlockItem {
+		return register(
+			BuiltInRegistries.BLOCK.getKey(block),
+			Item.Properties().useBlockDescriptionPrefix()
+				.component(DataComponents.LORE, ItemLore(listOf(Component.translatable("block.hotchpotch.fractured_block.lore", block.base.name))))
+		) { BlockItem(block, it) }
 	}
 
 	private fun register(name: String, properties: Item.Properties = Item.Properties(), item: (Item.Properties) -> Item = ::Item): Item {

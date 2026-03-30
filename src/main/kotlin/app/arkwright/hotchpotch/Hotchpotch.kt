@@ -6,6 +6,7 @@ import net.minecraft.resources.Identifier
 
 import net.fabricmc.api.ModInitializer
 
+import app.arkwright.hotchpotch.registration.ModBlocks
 import app.arkwright.hotchpotch.registration.ModGameRules
 import app.arkwright.hotchpotch.registration.ModItems
 
@@ -14,6 +15,7 @@ internal object Hotchpotch : ModInitializer {
 	internal val LOGGER = LogManager.getLogger(MOD_ID)
 
 	override fun onInitialize() {
+		ModBlocks.init()
 		ModItems.init()
 		ModGameRules.init()
 

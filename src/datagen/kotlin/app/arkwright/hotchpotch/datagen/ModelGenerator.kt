@@ -1,16 +1,53 @@
 package app.arkwright.hotchpotch.datagen
 
+import java.util.Optional
+
 import net.minecraft.client.data.models.BlockModelGenerators
+import net.minecraft.client.data.models.BlockModelGenerators.plainVariant
 import net.minecraft.client.data.models.ItemModelGenerators
+import net.minecraft.client.data.models.model.ModelTemplate
 import net.minecraft.client.data.models.model.ModelTemplates
+import net.minecraft.client.data.models.model.TextureMapping
+import net.minecraft.client.data.models.model.TextureSlot
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput
 
+import app.arkwright.hotchpotch.Hotchpotch
+import app.arkwright.hotchpotch.block.FracturedBlock
+import app.arkwright.hotchpotch.registration.ModBlocks
 import app.arkwright.hotchpotch.registration.ModItems
 
 class ModelGenerator(output: FabricPackOutput) : FabricModelProvider(output) {
-	override fun generateBlockStateModels(generator: BlockModelGenerators) = Unit
+	private val fracturedBlockTemplate = ModelTemplate(
+		Optional.of(Hotchpotch.id("block/template_fractured_block")),
+		Optional.empty(),
+		TextureSlot.ALL
+	)
+
+	override fun generateBlockStateModels(generator: BlockModelGenerators) {
+		fracturedBlock(ModBlocks.FRACTURED_DIRT, generator)
+		fracturedBlock(ModBlocks.FRACTURED_CLAY, generator)
+		fracturedBlock(ModBlocks.FRACTURED_STONE, generator)
+		fracturedBlock(ModBlocks.FRACTURED_ANDESITE, generator)
+		fracturedBlock(ModBlocks.FRACTURED_DIORITE, generator)
+		fracturedBlock(ModBlocks.FRACTURED_GRANITE, generator)
+		fracturedBlock(ModBlocks.FRACTURED_NETHERRACK, generator)
+	}
+
+	private fun fracturedBlock(block: FracturedBlock, generator: BlockModelGenerators) {
+		val model = fracturedBlockTemplate.create(
+			block,
+			TextureMapping.cube(block.base),
+			generator.modelOutput
+		)
+
+		generator.blockStateOutput.accept(
+			BlockModelGenerators.createSimpleBlock(block, plainVariant(model))
+		)
+
+		generator.registerSimpleItemModel(block, model)
+	}
 
 	override fun generateItemModels(generator: ItemModelGenerators) {
 		generator.generateFlatItem(ModItems.MINI_COAL, ModelTemplates.FLAT_ITEM)
