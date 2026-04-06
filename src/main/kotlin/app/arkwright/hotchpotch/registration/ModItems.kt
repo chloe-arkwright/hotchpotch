@@ -32,9 +32,9 @@ object ModItems : ItemRegistration(Hotchpotch.MOD_ID) {
 
 	val MUMBO_PAD = item("crafting_pad", Properties().stacksTo(1).durability(250), ::MumboPadItem)
 
-	val DEEP_SLATE_STAIRS = block(ModBlocks.DEEP_SLATE_STAIRS, Properties())
-	val DEEP_SLATE_SLAB = block(ModBlocks.DEEP_SLATE_SLAB, Properties())
-	val DEEP_SLATE_WALL = block(ModBlocks.DEEP_SLATE_WALL, Properties())
+	val DEEP_SLATE_STAIRS = block(ModBlocks.DEEP_SLATE_STAIRS)
+	val DEEP_SLATE_SLAB = block(ModBlocks.DEEP_SLATE_SLAB)
+	val DEEP_SLATE_WALL = block(ModBlocks.DEEP_SLATE_WALL)
 
 	override fun init() {
 		MINI_COAL.register()
