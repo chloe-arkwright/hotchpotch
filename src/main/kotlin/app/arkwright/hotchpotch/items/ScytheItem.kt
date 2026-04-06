@@ -19,6 +19,8 @@ import net.minecraft.world.item.context.UseOnContext
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.CropBlock
 
+import app.arkwright.chloe.lib.holder
+
 class ScytheItem(
 	toolMaterial: ToolMaterial,
 	attackDamageBaseline: Float,
@@ -61,7 +63,7 @@ class ScytheItem(
 
 	private fun dropItems(level: ServerLevel, pos: BlockPos, drops: Map<Item, Int>) {
 		for ((item, count) in drops) {
-			var count = if (item.builtInRegistryHolder().`is`(ItemTags.VILLAGER_PLANTABLE_SEEDS)) {
+			var count = if (item.holder().`is`(ItemTags.VILLAGER_PLANTABLE_SEEDS)) {
 				max(1, (0.75 * count).toInt())
 			} else {
 				count

@@ -1,7 +1,5 @@
 package app.arkwright.hotchpotch
 
-import org.apache.logging.log4j.LogManager
-
 import net.minecraft.resources.Identifier
 
 import net.fabricmc.api.ModInitializer
@@ -13,7 +11,6 @@ import app.arkwright.hotchpotch.registration.ModItems
 
 internal object Hotchpotch : ModInitializer {
 	internal const val MOD_ID: String = "hotchpotch"
-	internal val LOGGER = LogManager.getLogger(MOD_ID)
 
 	override fun onInitialize() {
 		listOf(
