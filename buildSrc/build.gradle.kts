@@ -40,8 +40,6 @@ dependencies {
 	implementation("net.fabricmc:fabric-loom:1.16.0-alpha.16")
 	// https://plugins.gradle.org/plugin/me.modmuss50.mod-publish-plugin
 	implementation("me.modmuss50.mod-publish-plugin:me.modmuss50.mod-publish-plugin.gradle.plugin:1.1.0")
-	// https://mvnrepository.com/artifact/com.google.code.gson/gson
-	implementation("com.google.code.gson:gson:2.13.2")
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-gradle-plugin
 	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.20")
 }

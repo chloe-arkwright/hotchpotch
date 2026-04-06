@@ -10,5 +10,7 @@ kotlin {
 		jvmTarget = JvmTarget.JVM_25
 		languageVersion = KotlinVersion.KOTLIN_2_3
 		apiVersion = KotlinVersion.KOTLIN_2_3
+
+		freeCompilerArgs.add("-Xcontext-parameters")
 	}
 }

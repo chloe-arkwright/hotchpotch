@@ -69,6 +69,16 @@ repositories {
 			includeGroup("maven.modrinth")
 		}
 	}
+
+	exclusiveContent {
+		forRepository {
+			mavenLocal()
+		}
+
+		filter {
+			includeGroupAndSubgroups("app.arkwright")
+		}
+	}
 }
 
 val versionMinecraft: String by props
