@@ -8,24 +8,27 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.ContainerLevelAccess
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.Level
+
 import app.arkwright.hotchpotch.items.mumbopad.MumboPadMenu
 
 class MumboPadItem(properties: Properties) : Item(properties) {
-    override fun use(level: Level, player: Player, hand: InteractionHand): InteractionResult {
-        if (!level.isClientSide) {
-            player.openMenu(SimpleMenuProvider(
-                { id, inventory, _ ->
-                    MumboPadMenu(
-                        id,
-                        inventory,
-                        ContainerLevelAccess.create(level, BlockPos.ZERO),
-                        hand
-                    )
-                },
-                this.getName(player.getItemInHand(hand))
-            ))
-        }
+	override fun use(level: Level, player: Player, hand: InteractionHand): InteractionResult {
+		if (!level.isClientSide) {
+			player.openMenu(
+				SimpleMenuProvider(
+					{ id, inventory, _ ->
+						MumboPadMenu(
+							id,
+							inventory,
+							ContainerLevelAccess.create(level, BlockPos.ZERO),
+							hand
+						)
+					},
+					this.getName(player.getItemInHand(hand))
+				)
+			)
+		}
 
-        return InteractionResult.SUCCESS
-    }
+		return InteractionResult.SUCCESS
+	}
 }

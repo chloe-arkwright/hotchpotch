@@ -6,6 +6,8 @@ import net.minecraft.resources.Identifier
 
 import net.fabricmc.api.ModInitializer
 
+import app.arkwright.chloe.lib.registration.Registration
+import app.arkwright.hotchpotch.registration.ModBlocks
 import app.arkwright.hotchpotch.registration.ModGameRules
 import app.arkwright.hotchpotch.registration.ModItems
 
@@ -14,8 +16,11 @@ internal object Hotchpotch : ModInitializer {
 	internal val LOGGER = LogManager.getLogger(MOD_ID)
 
 	override fun onInitialize() {
-		ModItems.init()
-		ModGameRules.init()
+		listOf(
+			ModBlocks,
+			ModItems,
+			ModGameRules
+		).forEach(Registration<*>::init)
 
 		LeafDecayManager.init()
 	}

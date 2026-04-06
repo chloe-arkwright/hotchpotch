@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.Blocks
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput
-import app.arkwright.hotchpotch.registration.ModBlocks
 
+import app.arkwright.hotchpotch.registration.ModBlocks
 import app.arkwright.hotchpotch.registration.ModItems
 
 class ModelGenerator(output: FabricPackOutput) : FabricModelProvider(output) {
