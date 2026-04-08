@@ -18,3 +18,5 @@ plugins {
 }
 
 rootProject.name = "hotchpotch"
+
+includeBuild("build-logic")
