@@ -96,6 +96,28 @@ dependencies {
 	versionFabricKotlin?.let { implementation("net.fabricmc:fabric-language-kotlin:$it") }
 }
 
+fun createDepEntries(providers: ProviderFactory): Map<String, String> {
+	val dependencies = mutableMapOf<String, String>()
+
+	val versions = providers.gradlePropertiesPrefixedBy("version.")
+	val declaredDependencies = providers.gradlePropertiesPrefixedBy("deps.").get()
+		.mapKeys { it.key.substringAfter("version.").replace(".", "_") }
+
+	dependencies.putAll(declaredDependencies)
+	dependencies.putIfAbsent("minecraft", "~$versionMinecraft")
+	dependencies.putIfAbsent("java", ">=${java.targetCompatibility.majorVersion}")
+
+	if (usesKotlin) {
+		dependencies.putIfAbsent("kotlin", ">=2.3.20")
+	}
+
+	for (entry in versions.get()) {
+		dependencies.putIfAbsent(entry.key.substringAfter("version.").replace(".", "_"), ">=${entry.value}")
+	}
+
+	return dependencies
+}
+
 tasks {
 	jar {
 		version = "$projectVersion+$versionMinecraft"
@@ -105,7 +127,8 @@ tasks {
 		inputs.properties(
 			"project" to mapOf(
 				"version" to projectVersion
-			)
+			),
+			"deps" to createDepEntries(providers)
 		)
 
 		filesMatching("fabric.mod.json") {
