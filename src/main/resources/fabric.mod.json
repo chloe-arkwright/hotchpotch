@@ -21,15 +21,13 @@
 			}
 		]
 	},
-	"mixins": [
-		"hotchpotch.mixins.json"
-	],
+	"mixins": [ "hotchpotch.mixins.json" ],
 	"accessWidener": "hotchpotch.classTweaker",
 	"depends": {
-		"fabricloader": ">=0.18.4",
-		"minecraft": "~26.1",
-		"java": ">=25",
-		"fabric-api": ">=0.144.3+26.1",
-		"fabric-language-kotlin": ">=1.13.10+kotlin.2.3.20"
+		"fabricloader": "${deps.fabric_loader}",
+		"minecraft": "${deps.minecraft}",
+		"java": "${deps.java}",
+		"fabric-api": "${deps.fabric_api}",
+		"fabric-language-kotlin": "${deps.fabric_kotlin}"
 	}
 }
